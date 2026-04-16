@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1036167772977",
+    "project_id": "my-app-study-fb",
+    "storage_bucket": "my-app-study-fb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036167772977:android:680e6735bf67fa32bc4e10",
+        "android_client_info": {
+          "package_name": "com.example.mystudyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036167772977-vv1aibleachjm1n3lg972t26r574meoc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mystudyapp",
+            "certificate_hash": "8d17fdc5f250462f633225b4519a517c3d2b3ec0"
+          }
+        },
+        {
+          "client_id": "1036167772977-k2ljj37drupq1q39eq21sa9g31sikrof.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANDabNjI8-7juVsYYoF5DhV5xPhcv-id0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036167772977-k2ljj37drupq1q39eq21sa9g31sikrof.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
