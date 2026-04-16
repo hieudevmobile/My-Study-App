@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+# Chặn toàn bộ thư mục .idea thay vì chỉ chặn từng file lẻ
+.idea/
