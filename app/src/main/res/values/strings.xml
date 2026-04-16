@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Study App</string>
+    <string name="back">Back</string>
+    <string name="forward">Forward</string>
+    <string name="startDate">Start date</string>
+    <string name="update_one">Update one</string>
 </resources>
