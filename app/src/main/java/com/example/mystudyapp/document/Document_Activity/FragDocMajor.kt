@@ -1,6 +1,7 @@
 package com.example.mystudyapp.document.Document_Activity
 
 import android.content.Intent
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -41,7 +42,11 @@ class FragDocMajor : Fragment(), SearchView.OnQueryTextListener {
         searchView = view.findViewById(R.id.searchMonHoc)
 
         loadMonHoc()
-        recyclerView.addItemDecoration(SpaceItemDecoration(12))
+        recyclerView.addItemDecoration(object : RecyclerView.ItemDecoration() {
+            override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+                outRect.top = if (parent.getChildAdapterPosition(view) == 0) 12 else 14
+            }
+        })
         searchView.setOnQueryTextListener(this)
         return view
     }
