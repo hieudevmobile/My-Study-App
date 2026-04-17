@@ -15,14 +15,13 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.mystudyapp.R
 import com.example.mystudyapp.data_school_schedule.CustomAdaterDataSubject
 import com.example.mystudyapp.data_school_schedule.DataSubject
-import com.example.mystudyapp.data_school_schedule.DataTKB
 import com.example.mystudyapp.data_school_schedule.DayoftheWeeks
 import com.example.mystudyapp.data_school_schedule.DesignListSubject
 import com.example.mystudyapp.databinding.FragmentCalendarBinding
 import java.time.LocalDate
-import java.time.LocalTime
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
+import java.util.Locale
 
 class FragCalendar : Fragment(), CalendarAdapter.OnItemListener,
     CustomAdaterDataSubject.OnItemClickListener {
@@ -85,21 +84,17 @@ class FragCalendar : Fragment(), CalendarAdapter.OnItemListener,
         val daysInMonthArray = ArrayList<DayoftheWeeks>()
         val yearMonth = YearMonth.from(date)
         val daysInMonth = yearMonth.lengthOfMonth()
-        val dayNames = arrayListOf("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")
-
-        // Add day-of-week headers
+        val dayNames = arrayListOf("T2", "T3", "T4", "T5", "T6", "T7", "CN")
         dayNames.forEach { daysInMonthArray.add(DayoftheWeeks(it)) }
 
-        // Calculate the first day of the month
         val firstOfMonth = date.withDayOfMonth(1)
-        val dayOfWeek = firstOfMonth.dayOfWeek.value // vị trí tương ứng với thứ
+        val leadingBlanks = firstOfMonth.dayOfWeek.value - 1
 
-        // Fill the calendar grid (6 weeks = 42 slots)
         for (i in 1..42) {
-            if (i <= dayOfWeek || i > daysInMonth + dayOfWeek) {
-                daysInMonthArray.add(DayoftheWeeks("")) // Empty slots
+            if (i <= leadingBlanks || i > daysInMonth + leadingBlanks) {
+                daysInMonthArray.add(DayoftheWeeks(""))
             } else {
-                daysInMonthArray.add(DayoftheWeeks((i - dayOfWeek).toString())) // Actual days
+                daysInMonthArray.add(DayoftheWeeks((i - leadingBlanks).toString()))
             }
         }
 
@@ -114,8 +109,9 @@ class FragCalendar : Fragment(), CalendarAdapter.OnItemListener,
 
     // Format month and year for display
     private fun monthYearFromDate(date: LocalDate): String {
-        val formatter = DateTimeFormatter.ofPattern("MMMM yyyy")
-        return date.format(formatter)
+        val formatter =
+            DateTimeFormatter.ofPattern("LLLL yyyy", Locale.forLanguageTag("vi"))
+        return date.format(formatter).replaceFirstChar { it.titlecase(Locale.forLanguageTag("vi")) }
     }
 
     // Handle click on a calendar day

@@ -31,9 +31,11 @@ class CalendarAdapter(
     }
 
     override fun onBindViewHolder(holder: CalendarViewHolder, position: Int) {
-        val day=daysOfMonth[position]
+        val day = daysOfMonth[position]
+        val isHeader = position < daysOfWeekCount
+        holder.setHeaderRowStyle(isHeader)
         holder.dayOfMonth.text = day.dayText
-        holder.setDotVisibility(day.hasSchedule)
+        holder.setDotVisibility(!isHeader && day.hasSchedule)
     }
 
     override fun getItemCount(): Int = daysOfMonth.size

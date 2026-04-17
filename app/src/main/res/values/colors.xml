@@ -10,4 +10,17 @@
     <color name="red">#ff0000</color>
     <color name="star_color">#26A7E6</color> <!-- Vàng cho công việc quan trọng -->
     <color name="star_inactive">#B0B0B0</color> <!-- Xám cho không quan trọng -->
+
+    <!-- Thời khóa biểu (school_schedule) -->
+    <color name="tkb_primary">#1B4965</color>
+    <color name="tkb_primary_light">#3E7CB1</color>
+    <color name="tkb_surface">#F0F4F8</color>
+    <color name="tkb_surface_card">#FFFFFF</color>
+    <color name="tkb_outline">#D8E0EA</color>
+    <color name="tkb_on_primary">#FFFFFF</color>
+    <color name="tkb_muted">#5C6B7A</color>
+    <color name="tkb_calendar_cell">#F8FAFC</color>
+    <color name="tkb_calendar_header">#E8EEF4</color>
+    <color name="tkb_tab_indicator">#62B6CB</color>
+    <color name="tkb_danger">#B3261E</color>
 </resources>
