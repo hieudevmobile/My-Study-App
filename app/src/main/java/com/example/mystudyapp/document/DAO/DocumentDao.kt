@@ -1,9 +1,9 @@
-package com.example.workandstudy_app.document.DAO
+package com.example.mystudyapp.document.DAO
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.workandstudy_app.document.Entity.Documents
+import com.example.mystudyapp.document.Entity.Documents
 
 @Dao
 interface DocumentDao {
