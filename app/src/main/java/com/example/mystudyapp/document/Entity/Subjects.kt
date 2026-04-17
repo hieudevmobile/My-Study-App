@@ -1,4 +1,4 @@
-package com.example.workandstudy_app.document.Entity
+package com.example.mystudyapp.document.Entity
 
 
 import androidx.room.Entity
