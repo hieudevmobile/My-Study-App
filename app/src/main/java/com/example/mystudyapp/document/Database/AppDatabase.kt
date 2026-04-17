@@ -1,20 +1,26 @@
 package com.example.mystudyapp.document.Database
 
 import android.content.Context
-import androidx.core.content.edit
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.mystudyapp.document.DAO.DocumentDao
+import com.example.mystudyapp.document.DAO.SubjectDao
+import com.example.mystudyapp.document.Entity.Documents
+import com.example.mystudyapp.document.Entity.Subjects
+import com.example.mystudyapp.todolist.DAO.TasksDao
+import com.example.mystudyapp.todolist.Entity.TasksData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.json.JSONObject
+import androidx.core.content.edit
 
 @Database(
     entities = [Subjects::class, Documents::class, TasksData::class],
-    version = 2, exportSchema = false
+    version = 3, exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun monHocDao(): SubjectDao
@@ -95,14 +101,13 @@ abstract class AppDatabase : RoomDatabase() {
                     )
                 }
 
-                // Chèn Documents
+                // Chèn Documents (không có danhMuc)
                 val taiLieuArray = jsonObject.getJSONArray("tai_lieu")
                 for (i in 0 until taiLieuArray.length()) {
                     val item = taiLieuArray.getJSONObject(i)
                     database.taiLieuDao().insert(
                         Documents(
                             monHocId = item.getInt("monHocId"),
-                            danhMuc = item.getString("danhMuc"),
                             phanLoai = item.getString("phanLoai"),
                             tenFile = item.getString("tenFile"),
                             urlFile = item.getString("urlFile"),
