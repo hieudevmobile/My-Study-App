@@ -1,4 +1,4 @@
-package com.example.workandstudy_app.document.Entity
+package com.example.mystudyapp.document.Entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -7,8 +7,7 @@ import androidx.room.PrimaryKey
 data class Documents(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val monHocId: Int,
-    val danhMuc: String,
-    val phanLoai:String,
+    val phanLoai: String,
     val tenFile: String,
     val urlFile: String,
     val ngayTao: String,

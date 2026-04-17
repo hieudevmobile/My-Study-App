@@ -1,4 +1,4 @@
-package com.example.workandstudy_app.document.Document_Activity
+package com.example.mystudyapp.document.Document_Activity
 
 import android.graphics.Rect
 import android.view.View

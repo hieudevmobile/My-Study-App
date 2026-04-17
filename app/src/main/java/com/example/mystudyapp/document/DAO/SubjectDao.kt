@@ -1,6 +1,6 @@
-package com.example.workandstudy_app.document.DAO
+package com.example.mystudyapp.document.DAO
 
-import com.example.workandstudy_app.document.Entity.Subjects
+import com.example.mystudyapp.document.Entity.Subjects
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
