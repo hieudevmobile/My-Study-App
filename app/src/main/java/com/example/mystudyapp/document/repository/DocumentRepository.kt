@@ -8,11 +8,6 @@ class DocumentRepository(private val documentDao: DocumentDao) {
     suspend fun addDocument(document: Documents) {
         documentDao.insert(document)
     }
-
-    suspend fun getDocumentsBySubject(monHocId: Int): MutableList<Documents> {
-        return documentDao.getByMonHocId(monHocId)
-    }
-
     /**
      * Lấy tài liệu theo môn học và phân loại
      */
