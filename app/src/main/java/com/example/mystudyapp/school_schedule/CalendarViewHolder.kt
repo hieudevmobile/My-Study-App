@@ -3,6 +3,7 @@ package com.example.mystudyapp.school_schedule
 import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.widget.TextViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mystudyapp.R
 
@@ -28,12 +29,12 @@ class CalendarViewHolder(itemView: View, private val onItemListener: CalendarAda
     fun setHeaderRowStyle(isHeader: Boolean) {
         if (isHeader) {
             cellRoot.setBackgroundResource(R.drawable.tkb_calendar_header_bg)
-            dayOfMonth.setTextAppearance(R.style.TextAppearance_Material3_LabelLarge)
+            TextViewCompat.setTextAppearance(dayOfMonth, R.style.TkbCalendarHeaderText)
             dayOfMonth.setTextColor(ContextCompat.getColor(itemView.context, R.color.tkb_muted))
             doIndicator.visibility = View.GONE
         } else {
             cellRoot.setBackgroundResource(R.drawable.tkb_calendar_cell_bg)
-            dayOfMonth.setTextAppearance(R.style.TextAppearance_Material3_BodyLarge)
+            TextViewCompat.setTextAppearance(dayOfMonth, R.style.TkbCalendarDayText)
             dayOfMonth.setTextColor(ContextCompat.getColor(itemView.context, R.color.tkb_primary))
         }
     }

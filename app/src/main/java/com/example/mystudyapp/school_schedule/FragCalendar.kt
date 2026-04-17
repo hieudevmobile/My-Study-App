@@ -30,7 +30,6 @@ class FragCalendar : Fragment(), CalendarAdapter.OnItemListener,
     private lateinit var calendarRecyclerView: RecyclerView
     private var selectedDate: LocalDate = LocalDate.now() // Current selected month
     private var dayPresent = ""
-    val timeFormatter = DateTimeFormatter.ofPattern("HH:mm")
     private lateinit var calendarAdapter: CalendarAdapter
     private val sharedViewModel: SharedViewModel by lazy {
         ViewModelProvider(requireActivity())[SharedViewModel::class.java]
@@ -111,7 +110,7 @@ class FragCalendar : Fragment(), CalendarAdapter.OnItemListener,
     private fun monthYearFromDate(date: LocalDate): String {
         val formatter =
             DateTimeFormatter.ofPattern("LLLL yyyy", Locale.forLanguageTag("vi"))
-        return date.format(formatter).replaceFirstChar { it.titlecase(Locale.forLanguageTag("vi")) }
+        return date.format(formatter)
     }
 
     // Handle click on a calendar day

@@ -4,4 +4,12 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="TkbCalendarHeaderText" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">@color/tkb_muted</item>
+    </style>
+
+    <style name="TkbCalendarDayText" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/tkb_primary</item>
+    </style>
 </resources>

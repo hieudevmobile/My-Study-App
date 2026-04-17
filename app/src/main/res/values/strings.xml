@@ -25,6 +25,7 @@
     <string name="tkb_btn_update_all">Cập nhật tất cả</string>
     <string name="tkb_btn_delete_one">Xóa tiết này</string>
     <string name="tkb_btn_delete_all">Xóa theo lớp</string>
+    <string name="tkb_week_hint_example">Ví dụ: 1–15, 18, 20–25</string>
     <string name="startDate">Ngày học: </string>
     <string name="so0">0</string>
     <string name="gachCheo">/</string>

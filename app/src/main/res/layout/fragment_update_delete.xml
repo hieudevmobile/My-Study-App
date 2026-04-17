@@ -1,373 +1,288 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="12dp">
+    android:background="@color/tkb_surface"
+    android:fillViewport="true"
+    android:paddingStart="12dp"
+    android:paddingTop="12dp"
+    android:paddingEnd="12dp"
+    android:paddingBottom="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="2dp"
-        android:orientation="vertical"
-        android:padding="2dp">
+        android:orientation="vertical">
 
-        <!-- Start Date Section -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="23dp"
+            android:paddingBottom="4dp"
+            android:text="@string/tkb_form_edit_title"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="@color/tkb_primary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp"
+            android:text="@string/tkb_form_edit_subtitle"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="@color/tkb_muted" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/tkb_surface_card"
             app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
+            app:cardElevation="0dp"
+            app:strokeColor="@color/tkb_outline"
+            app:strokeWidth="1dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#7FE4EF"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="12dp">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/startDate"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textAppearance="?attr/textAppearanceLabelMedium"
+                    android:textColor="@color/tkb_muted" />
 
                 <TextView
                     android:id="@+id/edtStartDay"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:paddingTop="4dp"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textColor="@color/tkb_primary"
+                    tools:text="01/09/2025" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <!-- Thời gian bắt đầu Section (Giữ nguyên như bạn yêu cầu) -->
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/tkb_surface_card"
             app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
+            app:cardElevation="0dp"
+            app:strokeColor="@color/tkb_outline"
+            app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="12dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Thời gian bắt đầu: "
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:paddingBottom="8dp"
+                    android:text="Giờ &amp; địa điểm"
+                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                    android:textColor="@color/tkb_primary" />
 
-                <EditText
-                    android:id="@+id/timeBatDau"
-                    android:layout_width="0dp"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:inputType="time"
-                    android:textSize="20sp" />
+                    android:hint="Giờ bắt đầu">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/timeBatDau"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:inputType="time" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Giờ kết thúc">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/timeKetThuc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:inputType="time" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Ca / tiết trong ngày">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/timeDay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Địa điểm *">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/diaDiem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2" />
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <!-- Thời gian kết thúc -->
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/tkb_surface_card"
             app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
+            app:cardElevation="0dp"
+            app:strokeColor="@color/tkb_outline"
+            app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="12dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Thời gian kết thúc: "
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:paddingBottom="8dp"
+                    android:text="Mã lớp &amp; môn"
+                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                    android:textColor="@color/tkb_primary" />
 
-                <EditText
-                    android:id="@+id/timeKetThuc"
-                    android:layout_width="0dp"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:inputType="time"
-                    android:textSize="20sp" />
+                    android:hint="Mã lớp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/maclass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Tên môn học *">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tenMonHoc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Mã học phần">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/maHocPhan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Tuần học (theo portal)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tuanHoc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2" />
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <!-- Mã lớp -->
-        <androidx.cardview.widget.CardView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
+            android:paddingBottom="8dp"
+            android:text="Thao tác"
+            android:textAppearance="?attr/textAppearanceLabelLarge"
+            android:textColor="@color/tkb_primary" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mã lớp: "
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/maclass"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:inputType="number"
-                    android:maxLines="1"
-                    android:textSize="20sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Tên môn học -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tên môn học: "
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/tenMonHoc"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:maxLines="1"
-                    android:textSize="20sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Mã học phần -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mã học phần: "
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/maHocPhan"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:maxLines="1"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <!-- Thời gian (Ngày học) -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Thời gian trong ngày: "
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/timeDay"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:maxLines="1"
-                    android:textSize="20sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Địa điểm -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Địa điểm: "
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/diaDiem"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:maxLines="1"
-                    android:textSize="20sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Tuần -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#7FE4EF"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tuần: "
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/tuanHoc"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:textSize="20sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Buttons -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
             android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/UpdateOne"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/colornew"
-                android:text="@string/update_one" />
+                android:text="@string/update_one"
+                app:backgroundTint="@color/tkb_primary" />
 
-            <androidx.appcompat.widget.AppCompatButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/UpdateAll"
+                style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/colornew"
-                android:text="Update All" />
+                android:text="@string/tkb_btn_update_all"
+                app:strokeColor="@color/tkb_primary" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/DeleteOne"
+                style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/colornew"
-                android:text="Delete" />
+                android:text="@string/tkb_btn_delete_one"
+                app:strokeColor="@color/tkb_danger"
+                android:textColor="@color/tkb_danger" />
 
-            <androidx.appcompat.widget.AppCompatButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/DeleteAll"
+                style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
                 android:layout_weight="1"
-                android:background="@drawable/colornew"
-                android:text="Delete all" />
+                android:text="@string/tkb_btn_delete_all"
+                app:strokeColor="@color/tkb_danger"
+                android:textColor="@color/tkb_danger" />
         </LinearLayout>
-
     </LinearLayout>
 </ScrollView>
