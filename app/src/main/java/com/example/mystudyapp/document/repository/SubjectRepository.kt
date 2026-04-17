@@ -13,14 +13,6 @@ class SubjectRepository(private val subjectDao: SubjectDao) {
         return subjectDao.getById(id)
     }
 
-    suspend fun getSubjectByName(name: String): Subjects? {
-        return subjectDao.getByName(name)
-    }
-
-    suspend fun addSubject(subject: Subjects): Long {
-        return subjectDao.insert(subject)
-    }
-
     suspend fun deleteSubject(subject: Subjects) {
         subjectDao.delete(subject)
     }
